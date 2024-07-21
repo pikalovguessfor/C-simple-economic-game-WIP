@@ -14,11 +14,11 @@ float incomeUsually(float income, string stage) {
 	}
 
 	else if (stage == NameStagesArr[2] or stage == NameStagesArr[4]) {
-		income == income + 0.6;
+		income = income + 0.6;
 	}
 
 	else if (stage == NameStagesArr[3] or stage == NameStagesArr[5]) {
-		income == income + 1.0;
+		income = income + 1.0;
 	}
 
 	return income;
