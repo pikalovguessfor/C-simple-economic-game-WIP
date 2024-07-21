@@ -4,28 +4,28 @@
 
 #include "includes.h"
 
-namespace gameEvents {																				//this file have own namespace for make code more EXPANSIONAL
+namespace gameEvents {																			//this file have own namespace for make code more EXPANSIONAL
 		
 	// this is main arrays to work with events
-	const short arrSitAllOk[9] =																	// Const array to comparison dynamic array "ArrSituation" on best way
+	const char arrSitAllOk[9] =																	// Const array to comparison dynamic array "ArrSituation" on best way
 	{
-	1, 1, 1,
-	1, 1, 1,
-	1, 1, 1,
+		'1', '1', '1',
+		'1', '1', '1',
+		'1', '1', '1',
 	};
 
-	const short arrSitAllBad[9] =																	// Const array to comparison dynamic array "ArrSituation" on bad way
+	const char arrSitAllBad[9] =																	// Const array to comparison dynamic array "ArrSituation" on bad way
 	{
-		0, 0, 0,
-		0, 0, 0,
-		0, 0, 0
+		'0', '0', '0',
+		'0', '0', '0',
+		'0', '0', '0'
 	};
 
-	short ArrSituationDyn[9] =																		// In this array count 1 this is "Stability" number, 0 this is "unstability numbers"
+	char ArrSituationDyn[9] =																		// In this array count 1 this is "Stability" number, 0 this is "unstability numbers"
 	{
-		1, 1, 1,
-		1, 1, 1,
-		1, 1, 1
+		'1', '1', '1',
+		'1', '1', '1',
+		'1', '1', '1'
 	};
 	//
 
@@ -56,11 +56,11 @@ namespace gameEvents {																				//this file have own namespace for mak
 	void ChangeSituatStab() {																		// Event for change numbers in array "ArrSituation[9]"
 		srand(time(0));
 
-		short arrInsideSit[] =
+		char arrInsideSit[] =
 		{
-		1, 1, 1,
-		1, 1, 1,
-		1, 1, 1
+			'1', '1', '1',
+			'1', '1', '1',
+			'1', '1', '1'
 		};
 
 		bool allRolled = false;
@@ -69,22 +69,28 @@ namespace gameEvents {																				//this file have own namespace for mak
 
 		while (!allRolled) {
 			
-			for (int i = 0; i <= 9; i++) {
+			for (int i = 0; i <= 8; i++) {
 
 				RollArr[i] = (rand() % 200);
 
 				if (RollArr[i] >= 100) {
-					arrInsideSit[i] = 0;
+					arrInsideSit[i] = '0';
 				}
 				else {
 					
-					arrInsideSit[i] = 1;
+					arrInsideSit[i] = '1';
 
 				}
 
 			}
 			
 			allRolled = true;
+
+		}
+
+		for (int i = 0; i <= 8; i++) {
+
+			ArrSituationDyn[i] = arrInsideSit[i];
 
 		}
 

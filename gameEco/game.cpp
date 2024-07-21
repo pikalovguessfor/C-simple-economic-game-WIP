@@ -80,9 +80,11 @@ int main() {
 		infAct1.showInfo(Act1);
 		infAct2.showInfo(Act2);
 
+		gameEvents::ChangeSituatStab();
+
+		cout << endl << endl << gameEvents::ArrSituationDyn << endl << endl;
 		
-		
-		Sleep(300);
+		Sleep(500);
 		get_cls();
 	}
 
