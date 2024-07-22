@@ -4,8 +4,8 @@
 
 #include "includes.h"
 
-namespace gameEvents {																			//this file have own namespace for make code more EXPANSIONAL
-		
+class gameEvents {																			//this file have own namespace for make code more EXPANSIONAL
+
 	// this is main arrays to work with events
 	const char arrSitAllOk[9] =																	// Const array to comparison dynamic array "ArrSituation" on best way
 	{
@@ -29,30 +29,6 @@ namespace gameEvents {																			//this file have own namespace for make
 	};
 	//
 
-	bool MinusCh() {																				// Event for chech array "ArrSituation[9]" have more three negative counts
-
-		short countMinus = 0;
-
-		for (int i = 0; i <= 9; i++) {
-
-			if (ArrSituationDyn[i] == 0) {
-
-				countMinus++;
-
-			}
-
-		}
-
-		if (countMinus > 3) {
-			return true;
-		}
-		
-		else {
-			return false;
-		}
-
-	}
-
 	void ChangeSituatStab() {																		// Event for change numbers in array "ArrSituation[9]"
 		srand(time(0));
 
@@ -64,11 +40,11 @@ namespace gameEvents {																			//this file have own namespace for make
 		};
 
 		bool allRolled = false;
-		
+
 		short RollArr[9];
 
 		while (!allRolled) {
-			
+
 			for (int i = 0; i <= 8; i++) {
 
 				RollArr[i] = (rand() % 200);
@@ -77,13 +53,13 @@ namespace gameEvents {																			//this file have own namespace for make
 					arrInsideSit[i] = '0';
 				}
 				else {
-					
+
 					arrInsideSit[i] = '1';
 
 				}
 
 			}
-			
+
 			allRolled = true;
 
 		}
@@ -99,10 +75,10 @@ namespace gameEvents {																			//this file have own namespace for make
 
 	void eventDivIncome(float income) {																// Event to Division "income" of actor
 
-		
+
 
 
 		return;
 	}
 
-}
+};
