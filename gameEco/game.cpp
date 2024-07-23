@@ -3,7 +3,7 @@
 #include "includes.h"
 
 
-float incomeUsually(float income, string stage) {
+long double incomeUsually(long double income, string stage) {
 	
 	if (stage == NameStagesArr[0]) {
 		income = income + 0.1;
@@ -24,7 +24,7 @@ float incomeUsually(float income, string stage) {
 	return income;
 }
 
-float priceForm(float price, float age, float income, float money ) {
+long double priceForm(long double price, long double age, long double income, long double money ) {
 
 	price = (((money/ 10) + age) * income);
 
@@ -32,14 +32,14 @@ float priceForm(float price, float age, float income, float money ) {
 
 }
 
-float agePlusMech(float age) {
+long double agePlusMech(long double age) {
 	
 	return age = age + 0.1;
 }
 
-float moneyFormulaMech(float money, float price) {
+long double moneyFormulaMech(long double money, long double income) {
 
-	money = ((money / 25) + (price / 10) + 0.1);
+	money = money + income;
 
 	return money;
 }
@@ -50,10 +50,10 @@ float moneyFormulaMech(float money, float price) {
 
 int main() {
 
-	actorChar Act1; actInfo infAct1;
-	actorChar Act2;	actInfo infAct2;
-	actorChar Act3; actInfo infAct3;
-	actorChar Act4; actInfo infAct4;
+	actorChar Act1; actInfo infAct1; gameEvents eventAct1;
+	actorChar Act2;	actInfo infAct2; gameEvents eventAct2;
+	actorChar Act3; actInfo infAct3; gameEvents eventAct3;
+	actorChar Act4; actInfo infAct4; gameEvents eventAct4;
 
 
 	bool gameWork = true;
@@ -63,6 +63,7 @@ int main() {
 		Act1.income = incomeUsually(Act1.income, Act1.stage);
 		Act1.price = priceForm(Act1.price, Act1.age, Act1.income, Act1.money);
 		Act1.money = moneyFormulaMech(Act1.money, Act1.price);
+		Act1.income = eventAct1.divIncomeEvent(Act1.income);
 
 		Act1.age = agePlusMech(Act1.age);
 
@@ -80,9 +81,9 @@ int main() {
 		infAct1.showInfo(Act1);
 		infAct2.showInfo(Act2);
 
-		gameEvents::ChangeSituatStab();
+		eventAct1.ChangeSituatStab();
 
-		cout << endl << endl << gameEvents::ArrSituationDyn << endl << endl;
+		cout << endl << endl << eventAct1.ArrSituationDyn << endl << endl;
 		
 		Sleep(500);
 		get_cls();

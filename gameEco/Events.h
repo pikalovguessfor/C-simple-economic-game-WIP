@@ -6,6 +6,8 @@
 
 class gameEvents {																			//this file have own namespace for make code more EXPANSIONAL
 
+private:
+
 	// this is main arrays to work with events
 	const char arrSitAllOk[9] =																	// Const array to comparison dynamic array "ArrSituation" on best way
 	{
@@ -20,6 +22,8 @@ class gameEvents {																			//this file have own namespace for make cod
 		'0', '0', '0',
 		'0', '0', '0'
 	};
+
+public:
 
 	char ArrSituationDyn[9] =																		// In this array count 1 this is "Stability" number, 0 this is "unstability numbers"
 	{
@@ -72,13 +76,42 @@ class gameEvents {																			//this file have own namespace for make cod
 
 	}
 
+	//------------------------------------------------------------------------This part of class work with result of previous var , And work with Array of symbols--------------------------------------------------------------------------------\\
 
-	void eventDivIncome(float income) {																// Event to Division "income" of actor
+private:
+
+	int SubWorkEventsCounterOfZero() {
+
+		int Counter = 0;
+
+		for (int i = 0; i < 9; i++) {
+
+			if (this->ArrSituationDyn[i] == '0') {
+				Counter++;
+			}
+
+		}
+		
+		if (Counter > 5) {
+			Counter = Counter / 2;
+		}
+
+		return Counter;
+	}
+
+public:
+
+	long double divIncomeEvent(long double income) {																// Event to Division "income" of actor
+
+		int counterMain = SubWorkEventsCounterOfZero();
 
 
+		if (this ->ArrSituationDyn[0] != '1' && this ->ArrSituationDyn[1] != '1') {
+			income = (income / 1.25);
+		
+		}
 
-
-		return;
+		return income;
 	}
 
 };

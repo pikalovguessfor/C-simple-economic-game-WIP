@@ -13,11 +13,11 @@ public:
 	string name = "";
 	string stage = NameStagesArr[0];
 
-	float income = 1;
-	float price = 1;
-	float age = 1;
-	float money = 1;
-	float production = 1;
+	long double income = 1;
+	long double price = 1;
+	long double age = 1;
+	long double money = 1;
+	long double production = 1;
 
 	bool ChecksUpgrade = false;
 	
