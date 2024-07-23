@@ -59,30 +59,37 @@ int main() {
 	bool gameWork = true;
 
 	while (gameWork) {
-
+		//
 		Act1.income = incomeUsually(Act1.income, Act1.stage);
 		Act1.price = priceForm(Act1.price, Act1.age, Act1.income, Act1.money);
-		Act1.money = moneyFormulaMech(Act1.money, Act1.price);
-		Act1.income = eventAct1.divIncomeEvent(Act1.income);
-
+		Act1.money = moneyFormulaMech(Act1.money, Act1.income);
 		Act1.age = agePlusMech(Act1.age);
 
-		Act1.DisableEx();
+		Act1.income = eventAct1.minIncomeEvent(Act1.income);
 
+		eventAct1.ArrSituationDyn;
+		eventAct1.ChangeSituatStab();
+
+		Act1.DisableEx();
+		//
 		Act2.income = incomeUsually(Act2.income, Act2.stage);
 		Act2.price = priceForm(Act2.price, Act2.age, Act2.income, Act2.money);
-		Act2.money = moneyFormulaMech(Act2.money, Act2.price);
-
+		Act2.money = moneyFormulaMech(Act2.money, Act2.income);
 		Act2.age = agePlusMech(Act1.age);
+
+		Act2.income = eventAct2.minIncomeEvent(Act2.income);
+
+		eventAct2.ArrSituationDyn;
+		eventAct2.ChangeSituatStab();
 
 		Act2.DisableEx();
 		
 		
+	
+		//	
 		infAct1.showInfo(Act1);
 		infAct2.showInfo(Act2);
-
-		eventAct1.ChangeSituatStab();
-
+		//
 		cout << endl << endl << eventAct1.ArrSituationDyn << endl << endl;
 		
 		Sleep(500);

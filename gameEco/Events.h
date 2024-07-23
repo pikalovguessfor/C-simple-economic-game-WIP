@@ -44,6 +44,8 @@ public:
 		};
 
 		bool allRolled = false;
+		bool getGoodArr = false;
+		bool getBadArr = false;
 
 		short RollArr[9];
 
@@ -56,12 +58,24 @@ public:
 				if (RollArr[i] >= 100) {
 					arrInsideSit[i] = '0';
 				}
+
 				else {
 
 					arrInsideSit[i] = '1';
 
 				}
 
+			}
+
+			if (RollArr[0] < 30 and RollArr[0] > 0) {
+
+				getGoodArr = true;
+
+			}
+			else if (RollArr[0] > 170 and RollArr[0 < 200]) {
+
+				getBadArr = true;
+				
 			}
 
 			allRolled = true;
@@ -71,6 +85,24 @@ public:
 		for (int i = 0; i <= 8; i++) {
 
 			ArrSituationDyn[i] = arrInsideSit[i];
+
+		}
+
+		if (getGoodArr == true) {
+
+			for (int i = 0; i < 9; i++) {
+				
+				ArrSituationDyn[i] = arrSitAllOk[i];
+			}
+
+		}
+		else if (getBadArr == true) {
+
+			for (int i = 0; i < 9; i++) {
+
+
+				ArrSituationDyn[i] = arrSitAllBad[i];
+			}
 
 		}
 
@@ -101,13 +133,13 @@ private:
 
 public:
 
-	long double divIncomeEvent(long double income) {																// Event to Division "income" of actor
+	long double minIncomeEvent(long double income) {																// Event to Division "income" of actor
 
 		int counterMain = SubWorkEventsCounterOfZero();
 
 
 		if (this ->ArrSituationDyn[0] != '1' && this ->ArrSituationDyn[1] != '1') {
-			income = (income / 1.25);
+			income = (income - (income / 15));
 		
 		}
 
