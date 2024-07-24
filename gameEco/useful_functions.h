@@ -2,6 +2,8 @@
 
 #include "includes.h"
 
+using namespace std;
+
 int get_cls() {
 
 	system("cls");

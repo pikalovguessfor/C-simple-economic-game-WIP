@@ -4,6 +4,8 @@
 
 #include "includes.h"
 
+using namespace std;
+
 const string NameStagesArr[6] = { "manufacture", "fabric", "corporation", "megacorp", "conglomeracy", "syndicate" };
 
 class actorChar {

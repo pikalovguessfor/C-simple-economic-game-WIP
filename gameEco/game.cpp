@@ -2,6 +2,8 @@
 
 #include "includes.h"
 
+using namespace std;
+
 
 long double incomeUsually(long double income, string stage) {
 	
@@ -65,11 +67,6 @@ int main() {
 		Act1.money = moneyFormulaMech(Act1.money, Act1.income);
 		Act1.age = agePlusMech(Act1.age);
 
-		Act1.income = eventAct1.minIncomeEvent(Act1.income);
-
-		eventAct1.ArrSituationDyn;
-		eventAct1.ChangeSituatStab();
-
 		Act1.DisableEx();
 		//
 		Act2.income = incomeUsually(Act2.income, Act2.stage);
@@ -77,20 +74,13 @@ int main() {
 		Act2.money = moneyFormulaMech(Act2.money, Act2.income);
 		Act2.age = agePlusMech(Act1.age);
 
-		Act2.income = eventAct2.minIncomeEvent(Act2.income);
-
-		eventAct2.ArrSituationDyn;
-		eventAct2.ChangeSituatStab();
 
 		Act2.DisableEx();
-		
-		
-	
 		//	
 		infAct1.showInfo(Act1);
 		infAct2.showInfo(Act2);
 		//
-		cout << endl << endl << eventAct1.ArrSituationDyn << endl << endl;
+
 		
 		Sleep(500);
 		get_cls();
