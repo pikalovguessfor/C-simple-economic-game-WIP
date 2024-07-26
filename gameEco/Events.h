@@ -53,6 +53,51 @@ public:
 	}
 	
 
-	//------------------------------------------------------------------------This part of class work with result of previous var , And work with Array of symbols--------------------------------------------------------------------------------\\
+};
 
+//------------------------------------------------------------------------Subclass to work with EVENTS this contains main logic of behaviour--------------------------------------------------------------------------------------------------\\
+
+class EventWorker : private gameEvents {
+
+public:
+
+	long double GetMinusMoney(long double money) {
+
+		int counterTrue = rollBolleanArr();
+
+		if (counterTrue == 0) {
+			
+			money = money + (money / 4);
+		}
+		else if (counterTrue < 2) {
+
+			money = money + (money / 8);
+		}
+		else if (counterTrue > 7) {
+
+			money = money - 100;
+		}
+
+		return money;
+	}
+
+	long double GetMinusIncome(long double income) {
+
+		int counterTrue = rollBolleanArr();
+
+		if (counterTrue == 0) {
+
+			income = income + (income / 4);
+		}
+		else if (counterTrue < 2) {
+
+			income = income + (income / 8);
+		}
+		else if (counterTrue > 7) {
+
+			income = income - 50;
+		}
+
+		return income;
+	}
 };
